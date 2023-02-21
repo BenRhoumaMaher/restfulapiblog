@@ -10,6 +10,8 @@ if(strpos($url,"/") !== 0){
 $dbInstance = new DB();
 $dbConn = $dbInstance->connect($db);
 
+header("Content-Type:application/json");
+
 /// GET for the Blog Comments Listing
 if($url == '/comments' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     $comments = getAllComments($dbConn);
