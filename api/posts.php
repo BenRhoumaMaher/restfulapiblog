@@ -10,6 +10,8 @@ if(strpos($url,"/") !== 0){
 $dbInstance = new DB();
 $dbConn = $dbInstance->connect($db);
 
+header("Content-Type:application/json");
+
 /// GET for the Blog Post Listing
 if($url == '/posts' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     $posts = getAllPosts($dbConn);
